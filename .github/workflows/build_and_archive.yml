@@ -1,0 +1,37 @@
+name: Build and archive from development branches and PRs
+
+on:
+  push:
+    branches:
+      - 'main' # Only main for the moment
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout this repository
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6.0.2
+
+    - name: Build the PDF
+      run: |
+        ./create-book-pdf.sh
+
+    - name: Archive the PDF
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f #v6.0.0
+      with:
+        name: the-little-book-of-uyuni-pdf-${{ github.event.pull_request.number || github.ref_name }}
+        path: build/
+
+    - name: Build the EPUB
+      run: |
+        rm -rf build/
+        ./create-book-epub.sh
+
+    - name: Archive the EPUB
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f #v6.0.0
+      with:
+        name: the-little-book-of-uyuni-epub-${{ github.event.pull_request.number || github.ref_name }}
+        path: build/
