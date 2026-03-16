@@ -64,16 +64,16 @@ HTTPD::
 A web server used, for example, for serving content to clients.
 
 Taskomatic::
-Taskomatic is a task scheduler. It enables {lm} to execut recurring tasks, such as periodically synchronize new packages, execute user-defined Ansible or Salt based scripts, and similar.
+Taskomatic is a task scheduler. It enables {lm} to execute recurring tasks, such as periodically synchronize new packages, execute user-defined Ansible or Salt based scripts, and similar.
 
 Cobbler::
 Cobbler footnote:[https://cobbler.github.io/] is a Linux installation server that enables {lm} to, for example, perform network autoinstallation of new servers.
 
 Salt::
-Salt, also known as Saltstack, is an automation framework that allows {lm} control clients.
+Salt, also known as Saltstack, is an automation framework that allows {lm} to control clients.
 {lm} Server contains a Salt Master service, which manages clients. Each client contains a Salt Minion service, which communicates with Salt Master.
 
 [TIP]
 ====
-While {lm} uses Salt for automation as well as communication, {lm} supports Ansible as well. In such case, uses can execute custom Ansible scripts on clients.
+While {lm} uses Salt for automation as well as communication, {lm} supports Ansible as well. In such case, users can execute custom Ansible scripts on clients.
 ====

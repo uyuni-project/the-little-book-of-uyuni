@@ -4,5 +4,5 @@ In this chapter, you learned:
 
 * You can use Salt in {lm} to execute custom Salt states.
 * A highstate combines multiple Salt states.
-* {lm} uses state channels to group store custom Salt states and files related to those states.
+* {lm} uses state channels to group and store custom Salt states and files related to those states.
 * You can create the `/srv/salt/top.sls` file to add custom Salt states to the Salt highstate execution for the specified client or clients.   

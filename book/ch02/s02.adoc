@@ -8,7 +8,7 @@ endif::[]
 .Prerequisites
 * An Uyuni instance.
 
-{lm} comes with a number of predefined repositories and channels that targed openSUSE, AlmaLinux, CentOS, Debian, Ubuntu, and many other operating systems. See the documentation footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/registration-overview.html] for more information about synchronizing other repositories.
+{lm} comes with a number of predefined repositories and channels that target openSUSE, AlmaLinux, CentOS, Debian, Ubuntu, and many other operating systems. See the documentation footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/registration-overview.html] for more information about synchronizing other repositories.
 
 To synchronize the openSUSE Leap 15.6 x86_64 repository, execute the following steps:
 

@@ -9,7 +9,7 @@ endif::[]
 
 For example, consider a situation where you want to deploy a 3-tier application that consists of a web UI service, API service, and a database. You can create a Salt state that deploys all three applications on one system, and configure {lm} to execute the state on any client that is marked with the `server-role: test` label.
 
-In addition, the Salt state can deploy and configure only one of the services, such as deploying the database when a client is marked with the `server-role: db-prod` label, or the web UI service when a client is makred with the `server-role: ui-prod` label.
+In addition, the Salt state can deploy and configure only one of the services, such as deploying the database when a client is marked with the `server-role: db-prod` label, or the web UI service when a client is marked with the `server-role: ui-prod` label.
 
 Alternatively, consider a situation where you require a client to always have specific firewall configuration. You can create a Salt state that configures firewall, and configure {lm} to periodically execute the Salt state on the client. This means that if anyone manually changes the firewall configuration, for example by mistake, {lm} remedies the situation during the next periodic Salt state execution.
 
@@ -69,8 +69,9 @@ base:
     - webui
 ----
 <.> Execute the `firewall.sls` state on all clients.
-<.> Execute the `devenv.sls` state on any clients with a name that ends if `devtest.tf.local`.
-<.> Execute the `db.sls`, `webaip.sls`, and `webui.sls` states on any client that has the `server-role: test` pillar.
+<.> Execute the `devenv.sls` state on any clients with a name that ends in `devtest.tf.local`.
+<.> Execute the `db.sls`, `webapi.sls`, and `webui.sls` states on any client that has the `server-role: test` pillar.
+
 
 --
 
