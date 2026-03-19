@@ -6,7 +6,7 @@ endif::[]
 == EXERCISE: Installing Uyuni
 
 .Prerequisites
-* An openSUSE Tumbleweed instnace with following hardware specification (or better):
+* An openSUSE Tumbleweed instance with following hardware specification (or better):
 ** *RAM*: 16GB
 ** *CPU*: 4 cores
 ** *Disk space*: 250GB (more is recommended in case you plan on using the Uyuni instance in production and want to manage RHEL or RHEL-based systems)
