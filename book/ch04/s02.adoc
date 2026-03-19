@@ -6,7 +6,7 @@ endif::[]
 == EXERCISE: Creating a CLM Project
 
 .Prerequisites
-* An Uyuni instance with a sychronized repository.
+* An Uyuni instance with a synchronized repository.
 
 To create a CLM project, execute the following steps:
 

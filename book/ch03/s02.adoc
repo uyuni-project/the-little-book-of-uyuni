@@ -117,7 +117,7 @@ You must execute this command from inside of the Server container, as suggested 
 leap-client:~ # rpm -qa venv-salt-minion
 venv-salt-minion-3006.0-47.2.uyuni.x86_64
 leap-client:~ # systemctl status venv-salt-minion.service
-● venv-salt-minion.service - The venvjailed Salt Minion
+● venv-salt-minion.service - The venv-jailed Salt Minion
      Loaded: loaded (/usr/lib/systemd/system/venv-salt-minion.service; enabled; preset: disabled)
      Active: active (running) since Thu 2025-12-04 10:06:11 CET; 18min ago
 ...output omitted...
