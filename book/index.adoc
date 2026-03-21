@@ -2,10 +2,10 @@
 = The Little Book of Uyuni 
 :author: Marek Czernek
 :creator: {author}
-:copyright: 2025 Marek Czernek
+:copyright: 2026 Marek Czernek
 :email: marek.czernek@suse.com
-:revnumber: v1.0.0
-:revdate: 01.12.2025
+:revnumber: v1.0.1
+:revdate: 19.03.2026
 :doctype: book
 :leveloffset: +1
 :sectnums:
