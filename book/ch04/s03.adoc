@@ -6,7 +6,7 @@ endif::[]
 == EXERCISE: Assigning Channels to a Registered Client
 
 .Prerequisites
-* An {uyuni} instance with a registered client and at least one channel.
+* A {uyuni} instance with a registered client and at least one channel.
 
 In the previous exercise, you created channels by using CLM project. However, the channels are not assigned to any client.
 

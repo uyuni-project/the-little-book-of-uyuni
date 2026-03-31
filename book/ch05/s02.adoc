@@ -6,9 +6,9 @@ endif::[]
 == EXERCISE: Creating and Executing Custom Salt States
 
 .Prerequisites
-* An {uyuni} instance with a registered client.
+* A {uyuni} instance with a registered client.
 
-To create and execute custom Salt states on an {uyuni} client, execute the following steps:
+To create and execute custom Salt states on a {uyuni} client, execute the following steps:
 
 . In the {uyuni} web UI, click *Configuration*, then *Channels*. Then, click *Create State Channel*.
 

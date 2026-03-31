@@ -6,7 +6,7 @@ endif::[]
 == EXERCISE: Synchronizing an openSUSE Leap 15.6 Repository
 
 .Prerequisites
-* An {uyuni} instance.
+* A {uyuni} instance.
 
 {uyuni} comes with a number of predefined repositories and channels that target openSUSE, AlmaLinux, CentOS, Debian, Ubuntu, and many other operating systems. See the documentation footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/registration-overview.html] for more information about synchronizing other repositories.
 

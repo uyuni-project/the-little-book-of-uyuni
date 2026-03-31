@@ -16,7 +16,7 @@ And many others. Users can freely download and deploy {uyuni} to manage environm
 
 Exercises in this book use {uyuni} because of ease of deployment and availability to any user. However, all concepts discussed in this book are valid for both {uyuni} and {mlm}.
 
-In this book, the terms {uyuni} and {mlm} are used interchangeably.
+In this book, we use {uyuni} as the default name for the project; when referring specifically to the supported downstream product from SUSE, we explicitly use the term {mlm}.
 
 .{uyuni} Web Interface
 image::uyuni-welcome.png["{uyuni} web UI"]
@@ -29,7 +29,7 @@ Server::
 The part of {uyuni} that contains a web interface, enables users to manage servers, packages, deploy new servers, and similar.
 
 Proxy::
-The part of an {uyuni} that enables users to deploy and use {uyuni} across large geographic area. You can register managed servers to proxy servers, which in part communicate and synchronize content with an {uyuni} server. This means that, for example, clients located in Asia can communicate with a proxy deployed in a geographically close region, instead of downloading content from the {uyuni} Server that is deployed in North America.
+The part of a {uyuni} that enables users to deploy and use {uyuni} across large geographic area. You can register managed servers to proxy servers, which in part communicate and synchronize content with a {uyuni} server. This means that, for example, clients located in Asia can communicate with a proxy deployed in a geographically close region, instead of downloading content from the {uyuni} Server that is deployed in North America.
 
 Client::
 {uyuni} considers clients to be systems that it manages. Clients use the Salt footnote:[https://saltproject.io/] automation framework to establish bidirectional communication between a server (or proxy) and itself. This means that the server can issue commands to the clients, allowing you to for example install or remove packages from the web interface. Similarly, clients report data back to the server, for example what packages and its versions are installed.
@@ -42,7 +42,7 @@ This book focuses on the {uyuni} Server and client. Proxies, large-scale environ
 
 == {uyuni} Server Architecture
 
-{uyuni} server consists of a set of containers that you deploy on a virtualized or a bare-metal Linux system. Currently, the two main containers are the database container (`uyuni-db`), and the Server container (`uyuni-server`).
+{uyuni} Server consists of a set of containers that you deploy on a virtualized or a bare-metal Linux system. Currently, the two main containers are the database container (`uyuni-db`), and the Server container (`uyuni-server`).
 
 [source,bash]
 ----

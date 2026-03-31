@@ -7,7 +7,7 @@ For any software to be useful, a user must be able to install it in their enviro
 
 [TIP]
 ====
-There are plans for future {uyuni} to support other packaging formats, such as Snaps and Flatpaks.
+There are plans for future versions of {uyuni} to support other packaging formats, such as Snaps and Flatpaks.
 ====
 
 One of {uyuni}'s fundamental concepts is synchronizing software packages, and acting as a repository for clients. In this chapter, you prepare the {uyuni} instance for registering clients.
