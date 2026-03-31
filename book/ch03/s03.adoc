@@ -1,6 +1,6 @@
 == EXERCISE: Remotely Installing a Package on a Client
 
-One of the simplest yet powerful ways that {lm} manages the clients is managing the packages installed on the client. This exercise guides you to install the `tree` package on the registered `leap-client` client.
+One of the simplest yet powerful ways that {uyuni} manages the clients is managing the packages installed on the client. This exercise guides you to install the `tree` package on the registered `leap-client` client.
 
 .Prerequisites
 * An Uyuni instance with a registered client.

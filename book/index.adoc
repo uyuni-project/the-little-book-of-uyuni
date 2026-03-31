@@ -29,7 +29,7 @@
 
 // book vars
 :mlm: SUSE Multi-Linux Manager
-:lm: Linux Manager
+:uyuni: Uyuni
 
 
 include::foreword.adoc[]

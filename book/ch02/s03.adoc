@@ -7,5 +7,5 @@ In this chapter, you learned:
 * A channel can have multiple child channels, which often link to packages that depend on packages in the parent or base channel.
 * A client is assigned a single base channel, and multiple children channels.
 * The process of mirroring a repository is called reposyncing.
-* To register a client with {lm}, you must generate a bootstrap repository.
+* To register a client with {uyuni}, you must generate a bootstrap repository.
 * A bootstrap repository generation fails typically due to the missing client tools channel, which provides for example the Salt package required for registering a client to server.

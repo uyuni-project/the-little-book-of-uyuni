@@ -11,9 +11,9 @@ endif::[]
 +
 In this exercise, the instance hostname is `leap-client.tf.local`.
 
-The {lm} Server should have network access to the client instance, and both instances should resolve each other hostnames:
+The {uyuni} Server should have network access to the client instance, and both instances should resolve each other hostnames:
 
-. Use the `ping` utility to verify that {lm} Server can resolve the `leap-client.tf.local` hostname:
+. Use the `ping` utility to verify that {uyuni} Server can resolve the `leap-client.tf.local` hostname:
 +
 [source,none]
 ----
@@ -27,7 +27,7 @@ PING leap-client.tf.local (10.146.11.204) 56(84) bytes of data.
 64 bytes from leap-client.tf.local (10.146.11.204): icmp_seq=1 ttl=63 time=0.218 ms
 ----
 
-. Ensure that you can ssh from {lm} Server to the `leap-client.tf.local` client:
+. Ensure that you can ssh from {uyuni} Server to the `leap-client.tf.local` client:
 +
 [source,none]
 ----
@@ -42,7 +42,7 @@ Have a lot of fun...
 leap-client:~ #
 ----
 
-. Use the `ping` utility to verify that the `leap-client.tf.local` instance can resolve the {lm} hostname:
+. Use the `ping` utility to verify that the `leap-client.tf.local` instance can resolve the {uyuni} hostname:
 +
 [source,none]
 ----
@@ -52,7 +52,7 @@ PING uyuni.tf.local (10.146.11.204) 56(84) bytes of data.
 ...output omitted...
 ----
 
-To register a client to your {lm} instance, execute the following steps:
+To register a client to your {uyuni} instance, execute the following steps:
 
 . In the Uyuni web UI, click *Systems*, *Activation Keys*, then *Create Key*. 
 

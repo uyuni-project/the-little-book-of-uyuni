@@ -8,7 +8,7 @@ endif::[]
 .Prerequisites
 * An Uyuni instance with a registered client.
 
-To create and execute custom Salt states on a {lm} client, execute the following steps:
+To create and execute custom Salt states on a {uyuni} client, execute the following steps:
 
 . In the Uyuni web UI, click *Configuration*, then *Channels*. Then, click *Create State Channel*.
 
