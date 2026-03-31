@@ -1,9 +1,9 @@
 == EXERCISE: Remotely Installing a Package on a Client
 
-One of the simplest yet powerful ways that {lm} manages the clients is managing the packages installed on the client. This exercise guides you to install the `tree` package on the registered `leap-client` client.
+One of the simplest yet powerful ways that {uyuni} manages the clients is managing the packages installed on the client. This exercise guides you to install the `tree` package on the registered `leap-client` client.
 
 .Prerequisites
-* An Uyuni instance with a registered client.
+* A {uyuni} instance with a registered client.
 * A synchronized repository.
 * A channel assigned to the registered client that links to the content of the synchronized repository.
 
@@ -18,7 +18,7 @@ If 'tree' is not a typo you can use command-not-found to lookup the package that
     cnf tree
 ----
 
-. In the Uyuni web UI, click *Systems*, *System List*, then *leap-client.tf.local*.
+. In the {uyuni} web UI, click *Systems*, *System List*, then *leap-client.tf.local*.
 +
 In the client information pane, click *Software*, then *Install*.
 
@@ -31,7 +31,7 @@ image::install-1.png[Listing packages to install]
 +
 Click *Install Packages*, then click *Confirm*.
 
-. Uyuni schedules a new Salt event, which installs the selected package. Click the *scheduled* link in the `1 package install has been scheduled for leap-client.tf.local` confirmation message.
+. {uyuni} schedules a new Salt event, which installs the selected package. Click the *scheduled* link in the `1 package install has been scheduled for leap-client.tf.local` confirmation message.
 
 . In the *Events* page for the client, you see a new *Package Install/Upgrade scheduled by admin* event.
 

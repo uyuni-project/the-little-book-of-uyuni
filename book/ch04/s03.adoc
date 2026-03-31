@@ -6,13 +6,13 @@ endif::[]
 == EXERCISE: Assigning Channels to a Registered Client
 
 .Prerequisites
-* An Uyuni instance with a registered client and at least one channel.
+* A {uyuni} instance with a registered client and at least one channel.
 
 In the previous exercise, you created channels by using CLM project. However, the channels are not assigned to any client.
 
 To assign the `opensuse-leap-15-6-base-qa-openSUSE Leap 15.6 (x86_64)` channel to the registered client, execute the following steps:
 
-. In the Uyuni web UI, click *Systems*. Then, click *leap-client.tf.local*.
+. In the {uyuni} web UI, click *Systems*. Then, click *leap-client.tf.local*.
 
 . Click *Software*, then *Software Channels*.
 
@@ -21,7 +21,7 @@ To assign the `opensuse-leap-15-6-base-qa-openSUSE Leap 15.6 (x86_64)` channel t
 .Configuring Channels
 image::clm-5.png[Available channels]
 
-. Uyuni schedules a new event to change the assigned channel. Click *Events*, then click *History*. Refresh the page until you see the `Subscribe channels scheduled by admin` event.
+. {uyuni} schedules a new event to change the assigned channel. Click *Events*, then click *History*. Refresh the page until you see the `Subscribe channels scheduled by admin` event.
 
 . Click *Details* and verify that the subscribed channel is now *opensuse-leap-15-6-base-qa-openSUSE Leap 15.6 (x86_64)*.
 

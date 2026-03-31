@@ -1,20 +1,20 @@
 = Content Lifecycle Management (CLM)
 
-Previous chapters discussed that {lm} synchronizes Linux operating system repositories, and serves them to registered clients. For example, you can configure your {lm} to synchronize Debian and Red Hat repositories. By default, {lm} periodically executes reposync to keep mirrored repositories up to date.
+Previous chapters discussed that {uyuni} synchronizes Linux operating system repositories, and serves them to registered clients. For example, you can configure your {uyuni} to synchronize Debian and Red Hat repositories. By default, {uyuni} periodically executes reposync to keep mirrored repositories up to date.
 
-In a previous chapter, we registered an openSUSE Leap 15.6 client, and assigned it the openSUSE Leap 15.6 x86_64 channel. This means that when the underlying repository content changes, this change is automatically propagated to our client, after {lm} executes reposync.
+In a previous chapter, we registered an openSUSE Leap 15.6 client, and assigned it the openSUSE Leap 15.6 x86_64 channel. This means that when the underlying repository content changes, this change is automatically propagated to our client, after {uyuni} executes reposync.
 
-However, a common problem is that {lm} users want control over what packages become available to what systems. Consider a situation where a developer team in your organization uses a Red Hat client as a PostgreSQL database. When a new PostgreSQL version appears in the Red Hat repository, and is synchronized by {lm}, any person that can access the client as root may upgrade the package by using `dnf`.
+However, a common problem is that {uyuni} users want control over what packages become available to what systems. Consider a situation where a developer team in your organization uses a Red Hat client as a PostgreSQL database. When a new PostgreSQL version appears in the Red Hat repository, and is synchronized by {uyuni}, any person that can access the client as root may upgrade the package by using `dnf`.
 
-Consider a case where a repository removes support for a package, and removes such package. In such cases, when {lm} synchronizes the repository, it also deletes the package by default. This might lead to a downtime, if your production environment depends on a specific version of a package that is removed and you want to re-deploy your application environment.
+Consider a case where a repository removes support for a package, and removes such package. In such cases, when {uyuni} synchronizes the repository, it also deletes the package by default. This might lead to a downtime, if your production environment depends on a specific version of a package that is removed and you want to re-deploy your application environment.
 
-For some use cases, this workflow is acceptable. But, for production deployments, {lm} users might want greater control over what packages to provide to what clients.
+For some use cases, this workflow is acceptable. But, for production deployments, {uyuni} users might want greater control over what packages to provide to what clients.
 
-{lm} enables you granular control over what packages to add or remove to what environments with the _Content Lifecycle Management_ footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/content-lifecycle.html] footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/common-workflows/workflow-content-lifecycle-management.html] functionality.
+{uyuni} enables you granular control over what packages to add or remove to what environments with the _Content Lifecycle Management_ footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/content-lifecycle.html] footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/common-workflows/workflow-content-lifecycle-management.html] functionality.
 
-== Understanding CLM in {lm}
+== Understanding CLM in {uyuni}
 
-The following concepts enable you to manage CLM in {lm}:
+The following concepts enable you to manage CLM in {uyuni}:
 
 
 (CLM) Project::

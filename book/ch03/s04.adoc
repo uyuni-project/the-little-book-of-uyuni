@@ -2,7 +2,7 @@
 
 In this chapter, you learned:
 
-* {lm} can manage clients by using Salt or SSH.
+* {uyuni} can manage clients by using Salt or SSH.
 * You can register new clients by using the web UI, bootstrap script, or the direct Salt registration method.
 * You can use Activation Key to configure newly registered clients.
-* You can manage packages by using the {lm} web UI.
+* You can manage packages by using the {uyuni} web UI.

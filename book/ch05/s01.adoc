@@ -5,17 +5,17 @@ endif::[]
 
 = Automating Tasks with Salt
 
-{lm} uses Salt for communication, as well as code execution. For example, when installing packages remotely on a client, {lm} uses Salt to execute the package installation. Additionally, you can define your own custom Salt states and execute them on clients.
+{uyuni} uses Salt for communication, as well as code execution. For example, when installing packages remotely on a client, {uyuni} uses Salt to execute the package installation. Additionally, you can define your own custom Salt states and execute them on clients.
 
-For example, consider a situation where you want to deploy a 3-tier application that consists of a web UI service, API service, and a database. You can create a Salt state that deploys all three applications on one system, and configure {lm} to execute the state on any client that is marked with the `server-role: test` label.
+For example, consider a situation where you want to deploy a 3-tier application that consists of a web UI service, API service, and a database. You can create a Salt state that deploys all three applications on one system, and configure {uyuni} to execute the state on any client that is marked with the `server-role: test` label.
 
 In addition, the Salt state can deploy and configure only one of the services, such as deploying the database when a client is marked with the `server-role: db-prod` label, or the web UI service when a client is marked with the `server-role: ui-prod` label.
 
-Alternatively, consider a situation where you require a client to always have specific firewall configuration. You can create a Salt state that configures firewall, and configure {lm} to periodically execute the Salt state on the client. This means that if anyone manually changes the firewall configuration, for example by mistake, {lm} remedies the situation during the next periodic Salt state execution.
+Alternatively, consider a situation where you require a client to always have specific firewall configuration. You can create a Salt state that configures firewall, and configure {uyuni} to periodically execute the Salt state on the client. This means that if anyone manually changes the firewall configuration, for example by mistake, {uyuni} remedies the situation during the next periodic Salt state execution.
 
 [TIP]
 ====
-{lm} also enables you to use Ansible scripts instead of Salt states. This is useful when you already have Ansible scripts, or when you do not want to use Salt as the automation framework. However, this chapter focuses on Salt. 
+{uyuni} also enables you to use Ansible scripts instead of Salt states. This is useful when you already have Ansible scripts, or when you do not want to use Salt as the automation framework. However, this chapter focuses on Salt. 
 ====
 
 == Understanding Salt Concepts
@@ -45,7 +45,7 @@ configure_apache:
 <.> ID of the execution step.
 <.> Use the "installed" function from the "pkg" state module (https://github.com/openSUSE/salt/blob/openSUSE/release/3006.0/salt/states/pkg.py#L994).
 <.> The function requires the "name" argument.
-<.> The `source` argument uses `salt://` for files managed by Salt. {lm} enables you to store files that you later use in Salt states. The location of `salt://` is configurable footnote:[https://docs.saltproject.io/en/master/ref/configuration/master.html#std-conf_master-file_roots].
+<.> The `source` argument uses `salt://` for files managed by Salt. {uyuni} enables you to store files that you later use in Salt states. The location of `salt://` is configurable footnote:[https://docs.saltproject.io/en/master/ref/configuration/master.html#std-conf_master-file_roots].
 
 --
 
@@ -79,18 +79,18 @@ Grain::
 A grain footnote:[https://docs.saltproject.io/en/master/topics/grains/index.html] is a `key: value` pair of data attached to a client. Salt calculates or stores this data is on a client.
 
 Pillar::
-A pillar footnote:[https://docs.saltproject.io/en/master/topics/tutorials/pillar.html] is a `key: value` pair of data attached to a client. Salt calculates or stores this data on the Salt master, which is the {lm} Server.
+A pillar footnote:[https://docs.saltproject.io/en/master/topics/tutorials/pillar.html] is a `key: value` pair of data attached to a client. Salt calculates or stores this data on the Salt master, which is the {uyuni} Server.
 +
 Pillars are useful, for example, for input variables into Salt states, because both Salt states and pillar data is stored on the Salt master.
 
-== Managing Salt Content in {lm}
+== Managing Salt Content in {uyuni}
 
-{lm} stores Salt states and files related to Salt files in a _State Channel_. When you create a state channel, {lm} creates the `/srv/susemanager/salt/$organization/$state_channel` directory. All content that you upload to that channel is stored in that directory, inside of the Server container.
+{uyuni} stores Salt states and files related to Salt files in a _State Channel_. When you create a state channel, {uyuni} creates the `/srv/susemanager/salt/$organization/$state_channel` directory. All content that you upload to that channel is stored in that directory, inside of the Server container.
 
 .A Custom State Channel
 image::salt-1.png[Creating a custom state channel]
 
-The previous image displays the `example-channel` state channel, which contains an `init.sls` Salt state file. {lm} saves the files in the channel into the `/srv/susemanager/salt/manager_org_1/example-channel/` directory.
+The previous image displays the `example-channel` state channel, which contains an `init.sls` Salt state file. {uyuni} saves the files in the channel into the `/srv/susemanager/salt/manager_org_1/example-channel/` directory.
 
 You can manually apply the state from the command line session inside of the Server container by using the `manager_org_1.example-channel` state name.
 
@@ -103,7 +103,7 @@ uyuni-server:/ # salt example-client.tf.local \
 ...output omitted...
 ----
 
-If you want to apply this state during every Salt highstate application, create the `/srv/salt/top.sls` file and specify client targets for the custom state. This means that during Salt highstate against that client, {lm} adds the custom state to the rest of the states that it executes against the client, for example:
+If you want to apply this state during every Salt highstate application, create the `/srv/salt/top.sls` file and specify client targets for the custom state. This means that during Salt highstate against that client, {uyuni} adds the custom state to the rest of the states that it executes against the client, for example:
 
 [source,yaml]
 ----
@@ -138,7 +138,7 @@ example-client.tf.local:
 ...output omitted...  
 ----
 <.> The custom state specified in the `top.sls` file.
-<.> Rest of the states that {lm} configures as part of the Salt highstate execution.
+<.> Rest of the states that {uyuni} configures as part of the Salt highstate execution.
 
-You can execute Salt highstate from the web UI on any client, or group of clients. In addition, you can configure {lm} to execute a custom state periodically, outside of the highstate execution, provided that you subscribe that client to the state channel.
+You can execute Salt highstate from the web UI on any client, or group of clients. In addition, you can configure {uyuni} to execute a custom state periodically, outside of the highstate execution, provided that you subscribe that client to the state channel.
 

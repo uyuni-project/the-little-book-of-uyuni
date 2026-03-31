@@ -6,7 +6,7 @@ endif::[]
 == EXERCISE: Creating a CLM Project
 
 .Prerequisites
-* An Uyuni instance with a synchronized repository.
+* A {uyuni} instance with a synchronized repository.
 
 To create a CLM project, execute the following steps:
 
@@ -41,7 +41,7 @@ Then, click *Save*.
 
 . Click *Build (1)* to build the CLM project. In the confirmation dialogue, click *Build*.
 +
-Then, wait for Uyuni to finish building the `qa` environment.
+Then, wait for {uyuni} to finish building the `qa` environment.
 +
 .A Built CLM Project
 image::clm-1.png[Built CLM project]
@@ -60,7 +60,7 @@ Wait until the promote action finishes.
 .QA and Prod Environments
 image::clm-3.png[Promoted CLM project]
 
-. Click *Software* to verify that the Uyuni created the `opensuse-leap-15-6-base-prod-openSUSE Leap 15.6 (x86_64)` channel.
+. Click *Software* to verify that {uyuni} created the `opensuse-leap-15-6-base-prod-openSUSE Leap 15.6 (x86_64)` channel.
 +
 .List of Available Channels
 image::clm-4.png[Available channels]

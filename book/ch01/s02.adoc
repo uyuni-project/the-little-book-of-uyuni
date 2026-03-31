@@ -3,19 +3,19 @@ ifeval::["{docname}" == "index"]
 :imagesdir: ch01/images
 endif::[]
 
-== EXERCISE: Installing Uyuni
+== EXERCISE: Installing {uyuni}
 
 .Prerequisites
 * An openSUSE Tumbleweed instance with following hardware specification (or better):
 ** *RAM*: 16GB
 ** *CPU*: 4 cores
-** *Disk space*: 250GB (more is recommended in case you plan on using the Uyuni instance in production and want to manage RHEL or RHEL-based systems)
+** *Disk space*: 250GB (more is recommended in case you plan on using the {uyuni} instance in production and want to manage RHEL or RHEL-based systems)
 +
-This system can be a virtual machine. Because Uyuni is distributed as a set of containers, it is possible to deploy Uyuni on any Linux host that packages Podman. However, openSUSE Tumbleweed is supported by the Uyuni community.
+This system can be a virtual machine. Because {uyuni} is distributed as a set of containers, it is possible to deploy {uyuni} on any Linux host that packages Podman. However, openSUSE Tumbleweed is supported by the {uyuni} community.
 
-To deploy Uyuni, execute the following steps:
+To deploy {uyuni}, execute the following steps:
 
-. As the `root` user, add the repository that contains Uyuni tooling.
+. As the `root` user, add the repository that contains {uyuni} tooling.
 +
 [source,none]
 ----
@@ -73,7 +73,7 @@ PING localhost (127.0.0.1) 56(84) bytes of data.
 64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.042 ms
 ----
 
-. Use `mgradm` to deploy Uyuni containers.
+. Use `mgradm` to deploy {uyuni} containers.
 +
 [source,none]
 ----
@@ -105,10 +105,10 @@ uyuni-db	    Up 6 minutes (healthy)
 uyuni-server	Up 5 minutes (healthy)
 ----
 
-. In a web browser, open the FQDN or the IP address of the server where you deployed Uyuni. Accept the self-signed certificate to access the Uyuni web UI. Use the `admin` username and password that you selected during installation to log in.
+. In a web browser, open the FQDN or the IP address of the server where you deployed {uyuni}. Accept the self-signed certificate to access the {uyuni} web UI. Use the `admin` username and password that you selected during installation to log in.
 +
-.Uyuni Web Interface
-image::deployment-login.png["Uyuni web UI"]
+.{uyuni} Web Interface
+image::deployment-login.png["{uyuni} web UI"]
 
 . In a command line, enter the `uyuni-server` container.
 +
@@ -163,7 +163,7 @@ uyuni-server:/ # systemctl status salt-master
 ...output omitted...
 ----
 
-. Explore logs from various Uyuni services.
+. Explore logs from various {uyuni} services.
 +
 [source,none]
 ----

@@ -1,42 +1,42 @@
 = Registering Clients
 
-For {lm} to manage any system, such system must be registered as a client. {lm} offers two main methods of communication between clients and the {lm} Server:
+For {uyuni} to manage any system, such system must be registered as a client. {uyuni} offers two main methods of communication between clients and the {uyuni} Server:
 
 Salt Bundle::
 --
-Salt Bundle footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/contact-methods-saltbundle.html] is a distribution of Salt that is designed to work with {lm}. Salt Bundle, which is the `venv-salt-minion` package, is a Python virtual environment that contains Salt, as well as all of the runtime dependencies to run Salt.
+Salt Bundle footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/contact-methods-saltbundle.html] is a distribution of Salt that is designed to work with {uyuni}. Salt Bundle, which is the `venv-salt-minion` package, is a Python virtual environment that contains Salt, as well as all of the runtime dependencies to run Salt.
 
 Salt establishes an agentic, bidirectional, event-driven communication between the Server and managed system. Salt Minion runs on the managed system, and enables the Server to remotely issue commands and execute code.
 
-The advantage of using the Salt communication is its scalability. One Server can easily manage thousands of clients. Salt communication is the default method of communication between {lm} Server and client.
+The advantage of using the Salt communication is its scalability. One Server can easily manage thousands of clients. Salt communication is the default method of communication between {uyuni} Server and client.
 --
 
 SSH::
 --
-{lm} Server can communicate with a client exclusively over SSH. This means that instead of installing the Salt Minion agent, the Server establishes an SSH connection, copies a Salt instance, and executes Salt in _masterless_ mode. After the Salt execution finishes locally, the Server parses the execution result, and reports it to the Server users.
+{uyuni} Server can communicate with a client exclusively over SSH. This means that instead of installing the Salt Minion agent, the Server establishes an SSH connection, copies a Salt instance, and executes Salt in _masterless_ mode. After the Salt execution finishes locally, the Server parses the execution result, and reports it to the Server users.
 
 Organizations can use the SSH management method when agentic communication is prohibited, for example due to security policies that prevent opening ports that Salt requires for communication, or security policies that prohibit installing the Salt Minion agent permanently.
 
 However, this method provides a number of disadvantages, such as much reduced scalability.
 --
 
-== Methods of Registering Clients in {lm}
+== Methods of Registering Clients in {uyuni}
 
-{lm} provides three main methods of registering new clients:
+{uyuni} provides three main methods of registering new clients:
 
 Web UI::
 Web UI enables you to specify the IP address or FQDN of a new client, and initiate the registration process. This is likely the easiest way to register a single client.
 
 Bootstrap Script::
-{lm} enables you to generate a shell script footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/reference/admin/bootstrap-script.html] that you execute from a client. This is useful when registering a large number of clients automatically.
+{uyuni} enables you to generate a shell script footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/reference/admin/bootstrap-script.html] that you execute from a client. This is useful when registering a large number of clients automatically.
 
 Direct Salt Registration::
 --
-Because {lm} uses Salt to manage clients, you can deploy a system with pre-installed Salt client, and configure {lm} to be the Salt Master server. In such case, you have to manually confirm the Salt registration from the {lm} Server.
+Because {uyuni} uses Salt to manage clients, you can deploy a system with pre-installed Salt client, and configure {uyuni} to be the Salt Master server. In such case, you have to manually confirm the Salt registration from the {uyuni} Server.
 
 This is useful when, for example, you deploy your systems from a _golden image_, which is a pre-configured template used in a cloud environment, from which you create new systems.
 
-In this scenario, if you use a non-bundled Salt version, such as using the `salt` package from the operating system repository, {lm} will convert that Salt installation into the Salt Bundle. This ensures that the Salt Master can always communicate with the Salt Minion.
+In this scenario, if you use a non-bundled Salt version, such as using the `salt` package from the operating system repository, {uyuni} will convert that Salt installation into the Salt Bundle. This ensures that the Salt Master can always communicate with the Salt Minion.
 
 It is recommended that if you create a golden image, that you include the Salt Bundle package as the installed Salt client.
 --
@@ -49,6 +49,6 @@ When registering a client, you can specify a number of configuration settings, s
 * What is the contact method for the client (`salt` or `ssh`).
 * What packages should be automatically installed after registration.
 
-And others. {lm} provides the concept of an *Activation Key* footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/activation-keys.html], which lets you configure the client automatically.
+And others. {uyuni} provides the concept of an *Activation Key* footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/activation-keys.html], which lets you configure the client automatically.
 
-Because activation keys specify the base channel and child channels that {lm} assigns to the client, each client architecture requires at least one activation key. For example, clients that use Alma Linux 10 for the x86_64 architecture use a different activation key than clients that use SUSE Enterprise Linux 16 for the x86_64 architecture.
+Because activation keys specify the base channel and child channels that {uyuni} assigns to the client, each client architecture requires at least one activation key. For example, clients that use Alma Linux 10 for the x86_64 architecture use a different activation key than clients that use SUSE Enterprise Linux 16 for the x86_64 architecture.

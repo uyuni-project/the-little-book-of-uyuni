@@ -6,11 +6,11 @@ endif::[]
 == EXERCISE: Creating and Executing Custom Salt States
 
 .Prerequisites
-* An Uyuni instance with a registered client.
+* A {uyuni} instance with a registered client.
 
-To create and execute custom Salt states on a {lm} client, execute the following steps:
+To create and execute custom Salt states on a {uyuni} client, execute the following steps:
 
-. In the Uyuni web UI, click *Configuration*, then *Channels*. Then, click *Create State Channel*.
+. In the {uyuni} web UI, click *Configuration*, then *Channels*. Then, click *Create State Channel*.
 
 . In the *New Config State Channel* window, enter the following data:
 +
@@ -70,7 +70,7 @@ Then, click *Create Config State Channel*.
 +
 Then, click *Create Configuration File*.
 
-. On the command line, create an SSH session to your Uyuni instance, and execute `mgrctl term` to enter the Server container session:
+. On the command line, create an SSH session to your {uyuni} instance, and execute `mgrctl term` to enter the Server container session:
 +
 [source,none]
 ----

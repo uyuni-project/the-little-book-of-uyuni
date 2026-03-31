@@ -2,9 +2,9 @@
 
 In this chapter, you learned:
 
-* Uyuni is the upstream project of {mlm}.
-* You can use Uyuni to help you with deploying and managing various Linux distributions, such as openSUSE, SUSE, Red Hat, Debian, Ubuntu, and others. 
-* Uyuni consists of Server, Proxy, and clients.
-* Uyuni Server consists of a number of parts, such as Salt, Cobbler, Taskomatic, Java APIs, and web UI.
-* The steps to deploy Uyuni.
-* The steps to verify successful Uyuni deployment.
+* {uyuni} is the upstream project of {mlm}.
+* You can use {uyuni} to help you with deploying and managing various Linux distributions, such as openSUSE, SUSE, Red Hat, Debian, Ubuntu, and others.
+* {uyuni} consists of Server, Proxy, and clients.
+* {uyuni} Server consists of a number of parts, such as Salt, Cobbler, Taskomatic, Java APIs, and web UI.
+* The steps to deploy {uyuni}.
+* The steps to verify successful {uyuni} deployment.

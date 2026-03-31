@@ -3,46 +3,46 @@ ifeval::["{docname}" == "index"]
 :imagesdir: ch01/images
 endif::[]
 
-= Understanding Uyuni and {mlm}
+= Understanding {uyuni} and {mlm}
 
-Uyuni footnote:[https://www.uyuni-project.org/] is an open-source project footnote:[https://github.com/uyuni-project/uyuni/] that helps organizations with deployment, lifecycle management, and software management for their Linux systems. Specifically, Uyuni simplifies the following tasks:
+{uyuni} footnote:[https://www.uyuni-project.org/] is an open-source project footnote:[https://github.com/uyuni-project/uyuni/] that helps organizations with deployment, lifecycle management, and software management for their Linux systems. Specifically, {uyuni} simplifies the following tasks:
 
 * Managing various Linux systems from one centralized place, for example managing SUSE, openSUSE, Red Hat, Debian, and Ubuntu systems.
 * Deployment of new Linux systems.
 * Ensuring compliance and minimizing configuration drift of managed systems.
 * Distributing software packages to managed systems.
 
-And many others. Users can freely download and deploy Uyuni to manage environments in any capacity, including business use. However, organizations may require professional support such as stable releases, long-term support, SLA contracts, and similar. In such case, SUSE offers {mlm}, or simply {lm}. {lm} is a downstream product of Uyuni, which means it is based on Uyuni.
+And many others. Users can freely download and deploy {uyuni} to manage environments in any capacity, including business use. However, organizations may require professional support such as stable releases, long-term support, SLA contracts, and similar. In such case, SUSE offers {mlm} based on {uyuni}.
 
-Exercises in this book use Uyuni because of ease of deployment and availability to any user. However, all concepts discussed in this book are valid for both Uyuni and {mlm}. 
+Exercises in this book use {uyuni} because of ease of deployment and availability to any user. However, all concepts discussed in this book are valid for both {uyuni} and {mlm}.
 
-In this book, the terms {lm}, {mlm}, and Uyuni are used interchangeably.
+In this book, we use {uyuni} as the default name for the project; when referring specifically to the supported downstream product from SUSE, we explicitly use the term {mlm}.
 
-.Uyuni Web Interface
-image::uyuni-welcome.png["Uyuni web UI"]
+.{uyuni} Web Interface
+image::uyuni-welcome.png["{uyuni} web UI"]
 
-== {lm} Architecture
+== {uyuni} Architecture
 
-At a high level, {lm} contains the following parts:
+At a high level, {uyuni} contains the following parts:
 
 Server::
-The part of {lm} that contains a web interface, enables users to manage servers, packages, deploy new servers, and similar.
+The part of {uyuni} that contains a web interface, enables users to manage servers, packages, deploy new servers, and similar.
 
 Proxy::
-The part of a {lm} that enables users to deploy and use {lm} across large geographic area. You can register managed servers to proxy servers, which in part communicate and synchronize content with a {lm} server. This means that, for example, clients located in Asia can communicate with a proxy deployed in a geographically close region, instead of downloading content from the {lm} Server that is deployed in North America.
+The part of a {uyuni} that enables users to deploy and use {uyuni} across large geographic area. You can register managed servers to proxy servers, which in part communicate and synchronize content with a {uyuni} server. This means that, for example, clients located in Asia can communicate with a proxy deployed in a geographically close region, instead of downloading content from the {uyuni} Server that is deployed in North America.
 
 Client::
-{lm} considers clients to be systems that it manages. Clients use the Salt footnote:[https://saltproject.io/] automation framework to establish bidirectional communication between a server (or proxy) and itself. This means that the server can issue commands to the clients, allowing you to for example install or remove packages from the web interface. Similarly, clients report data back to the server, for example what packages and its versions are installed.
+{uyuni} considers clients to be systems that it manages. Clients use the Salt footnote:[https://saltproject.io/] automation framework to establish bidirectional communication between a server (or proxy) and itself. This means that the server can issue commands to the clients, allowing you to for example install or remove packages from the web interface. Similarly, clients report data back to the server, for example what packages and its versions are installed.
 
 Hub and Peripheral Servers::
-When one Server cannot handle the number of clients, {lm} enables users to scale their infrastructure by deploying multiple Peripheral Servers that each manage a subset of clients. The Peripheral Servers are then managed by a single Hub Server, which provides centralized information to the users via the web UI.
+When one Server cannot handle the number of clients, {uyuni} enables users to scale their infrastructure by deploying multiple Peripheral Servers that each manage a subset of clients. The Peripheral Servers are then managed by a single Hub Server, which provides centralized information to the users via the web UI.
 This enables users to manage tens of thousands of clients.
 
-This book focuses on the {lm} Server and client. Proxies, large-scale environments, air-gapped environments, and cloud environments are out of scope for this book.
+This book focuses on the {uyuni} Server and client. Proxies, large-scale environments, air-gapped environments, and cloud environments are out of scope for this book.
 
-== {lm} Server Architecture
+== {uyuni} Server Architecture
 
-{lm} server consists of a set of containers that you deploy on a virtualized or a bare-metal Linux system. Currently, the two main containers are the database container (`uyuni-db`), and the Server container (`uyuni-server`).
+{uyuni} Server consists of a set of containers that you deploy on a virtualized or a bare-metal Linux system. Currently, the two main containers are the database container (`uyuni-db`), and the Server container (`uyuni-server`).
 
 [source,bash]
 ----
@@ -55,25 +55,25 @@ registry.suse.de/  ...  0.0.0.0:80->80/tcp     ...  uyuni-server
 The Server container consists of a number of other services, such as:
 
 Web UI::
-Graphical interface that you can use to control your {lm}, as well as the registered clients.
+Graphical interface that you can use to control your {uyuni}, as well as the registered clients.
 
 Tomcat::
-A Java-based web server that serves the core of {lm} APIs.
+A Java-based web server that serves the core of {uyuni} APIs.
 
 HTTPD::
 A web server used, for example, for serving content to clients.
 
 Taskomatic::
-Taskomatic is a task scheduler. It enables {lm} to execute recurring tasks, such as periodically synchronize new packages, execute user-defined Ansible or Salt based scripts, and similar.
+Taskomatic is a task scheduler. It enables {uyuni} to execute recurring tasks, such as periodically synchronize new packages, execute user-defined Ansible or Salt based scripts, and similar.
 
 Cobbler::
-Cobbler footnote:[https://cobbler.github.io/] is a Linux installation server that enables {lm} to, for example, perform network autoinstallation of new servers.
+Cobbler footnote:[https://cobbler.github.io/] is a Linux installation server that enables {uyuni} to, for example, perform network autoinstallation of new servers.
 
 Salt::
-Salt, also known as Saltstack, is an automation framework that allows {lm} to control clients.
-{lm} Server contains a Salt Master service, which manages clients. Each client contains a Salt Minion service, which communicates with Salt Master.
+Salt, also known as Saltstack, is an automation framework that allows {uyuni} to control clients.
+{uyuni} Server contains a Salt Master service, which manages clients. Each client contains a Salt Minion service, which communicates with Salt Master.
 
 [TIP]
 ====
-While {lm} uses Salt for automation as well as communication, {lm} supports Ansible as well. In such case, users can execute custom Ansible scripts on clients.
+While {uyuni} uses Salt for automation as well as communication, {uyuni} supports Ansible as well. In such case, users can execute custom Ansible scripts on clients.
 ====
