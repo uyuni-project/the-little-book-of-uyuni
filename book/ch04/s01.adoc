@@ -4,7 +4,7 @@ Previous chapters discussed that {uyuni} synchronizes Linux operating system rep
 
 In a previous chapter, we registered an openSUSE Leap 15.6 client, and assigned it the openSUSE Leap 15.6 x86_64 channel. This means that when the underlying repository content changes, this change is automatically propagated to our client, after {uyuni} executes reposync.
 
-However, a common problem is that {uyuni} users want control over what packages become available to what systems. Consider a situation where a developer team in your organization uses a Red Hat client as a PostgreSQL database. When a new PostgreSQL version appears in the Red Hat repository, and is synchronized by {lm}, any person that can access the client as root may upgrade the package by using `dnf`.
+However, a common problem is that {uyuni} users want control over what packages become available to what systems. Consider a situation where a developer team in your organization uses a Red Hat client as a PostgreSQL database. When a new PostgreSQL version appears in the Red Hat repository, and is synchronized by {uyuni}, any person that can access the client as root may upgrade the package by using `dnf`.
 
 Consider a case where a repository removes support for a package, and removes such package. In such cases, when {uyuni} synchronizes the repository, it also deletes the package by default. This might lead to a downtime, if your production environment depends on a specific version of a package that is removed and you want to re-deploy your application environment.
 
