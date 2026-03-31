@@ -10,6 +10,13 @@ endif::[]
 
 {lm} comes with a number of predefined repositories and channels that targed openSUSE, AlmaLinux, CentOS, Debian, Ubuntu, and many other operating systems. See the documentation footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/registration-overview.html] for more information about synchronizing other repositories.
 
+[WARNING]
+====
+icon:warning[] *WARNING*
+This exercise will sync the bare minimum to continue with the rest of exercises in the book. If you intend to use this environment for production purposes, make sure you check the documentation to https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/clients-opensuseleap.html#_add_software_channels[sync all the required openSUSE Leap 15.6 channels and repositories], and also keep in mind you will need around 250GB of disk space to be able to sync all channels and repositories.
+====
+
+
 To synchronize the openSUSE Leap 15.6 x86_64 repository, execute the following steps:
 
 . SSH into the {lm} instance, and enter the Server container:
@@ -66,7 +73,7 @@ uyuni-server:/ # tail -f /var/log/rhn/reposync/opensuse_leap15_6-x86_64.log
 [WARNING]
 ====
 icon:warning[] *WARNING*
-{lm} mirrors the whole repository, which is over 43000 packages for the openSUSE Leap 15.6 x86_64 repository. This may take a while, depending on your internet connection. This may also require a lot of disk space. In the case of the openSUSE Leap repository, synchronizing the repository requires around 65GB disk space.
+{lm} mirrors the whole repository, which is over 43000 packages for the openSUSE Leap 15.6 x86_64 repository. This may take a while, depending on your internet connection. This may also require a lot of disk space. In the case of the openSUSE Leap repository, synchronizing the repository requires around 90GB disk space.
 ====
 
 . While waiting for the reposync to finish, log in to the web UI to explore the newly defined channel and repository.
