@@ -13,7 +13,7 @@ endif::[]
 [WARNING]
 ====
 icon:warning[] *WARNING*
-This exercise will sync the bare minimum to continue with the rest of exercises in the book. If you intend to use this environment for production purposes, make sure you check the documentation to https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/clients-opensuseleap.html#_add_software_channels[sync all the required openSUSE Leap 15.6 channels and repositories], and also keep in mind you will need around 250GB of disk space to be able to sync all channels and repositories.
+This exercise synchronizes only the openSUSE Leap 15.6 repository required for the exercises in this book. Follow the documentation to https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/clients-opensuseleap.html#_add_software_channels[synchronize the remaining channels and repositories] for a production deployment. Doing so requires around 250GB.
 ====
 
 
