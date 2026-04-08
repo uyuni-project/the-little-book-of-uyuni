@@ -9,7 +9,7 @@ endif::[]
 * An openSUSE Tumbleweed instance with following hardware specification (or better):
 ** *RAM*: 16GB
 ** *CPU*: 4 cores
-** *Disk space*: 250GB (more is recommended in case you plan on using the Uyuni instance in production and want to manage RHEL or RHEL-based systems)
+** *Disk space*: 250GB (more is recommended in case you plan on using the Uyuni instance in production)
 +
 This system can be a virtual machine. Because Uyuni is distributed as a set of containers, it is possible to deploy Uyuni on any Linux host that packages Podman. However, openSUSE Tumbleweed is supported by the Uyuni community.
 
