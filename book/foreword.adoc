@@ -4,3 +4,4 @@
 This book is open source. For any comments, bug reports, contributions, requests, and similar, visit https://github.com/m-czernek/the-little-book-of-uyuni.
 
 This book was created as part of SUSE's Hack Week 2025.
+

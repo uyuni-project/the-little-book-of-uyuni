@@ -6,3 +6,4 @@ In this chapter, you learned:
 * Content Lifecycle Management (CLM) enables you to control when to update packages for specific clients.
 * CLM enables you to create multiple sequential environments, such that you can for example test an update before you deploy it on production systems.
 * CLM creates new channels that you can assign to clients.
+
