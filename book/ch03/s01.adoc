@@ -52,3 +52,4 @@ When registering a client, you can specify a number of configuration settings, s
 And others. {lm} provides the concept of an *Activation Key* footnote:[https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/activation-keys.html], which lets you configure the client automatically.
 
 Because activation keys specify the base channel and child channels that {lm} assigns to the client, each client architecture requires at least one activation key. For example, clients that use Alma Linux 10 for the x86_64 architecture use a different activation key than clients that use SUSE Enterprise Linux 16 for the x86_64 architecture.
+

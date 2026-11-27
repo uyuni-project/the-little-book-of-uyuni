@@ -42,3 +42,4 @@ After you define a project and configure its contents, you must _build_ the proj
 * Link packages defined by the sources to the channels.
 
 Rebuilding an already existing project is useful when you want to copy the filtered sources to the first defined environment, or when you modify the sources and filters in a project. 
+

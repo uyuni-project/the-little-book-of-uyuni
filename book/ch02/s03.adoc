@@ -9,3 +9,4 @@ In this chapter, you learned:
 * The process of mirroring a repository is called reposyncing.
 * To register a client with {lm}, you must generate a bootstrap repository.
 * A bootstrap repository generation fails typically due to the missing client tools channel, which provides for example the Salt package required for registering a client to server.
+

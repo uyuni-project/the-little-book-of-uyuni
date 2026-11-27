@@ -8,3 +8,4 @@ In this chapter, you learned:
 * Uyuni Server consists of a number of parts, such as Salt, Cobbler, Taskomatic, Java APIs, and web UI.
 * The steps to deploy Uyuni.
 * The steps to verify successful Uyuni deployment.
+
