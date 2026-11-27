@@ -12,11 +12,11 @@ Uyuni footnote:[https://www.uyuni-project.org/] is an open-source project footno
 * Ensuring compliance and minimizing configuration drift of managed systems.
 * Distributing software packages to managed systems.
 
-And many others. Users can freely download and deploy Uyuni to manage environments in any capacity, including business use. However, organizations may require professional support such as stable releases, long-term support, SLA contracts, and similar. In such case, SUSE offers {mlm}, or simply {lm}. {lm} is a downstream product of Uyuni, which means it is based on Uyuni.
+And many others. Users can freely download and deploy Uyuni to manage environments in any capacity, including business use. However, organizations may require professional support such as stable releases, long-term support, SLA contracts, and similar. In such case, SUSE offers {mlm}. {mlm} is a downstream product of Uyuni, which means it is based on Uyuni.
 
 Exercises in this book use Uyuni because of ease of deployment and availability to any user. However, all concepts discussed in this book are valid for both Uyuni and {mlm}. 
 
-In this book, the terms {lm}, {mlm}, and Uyuni are used interchangeably.
+In this book, the terms {lm} and {mlm} are used interchangeably.
 
 .Uyuni Web Interface
 image::uyuni-welcome.png["Uyuni web UI"]
@@ -77,3 +77,4 @@ Salt, also known as Saltstack, is an automation framework that allows {lm} to co
 ====
 While {lm} uses Salt for automation as well as communication, {lm} supports Ansible as well. In such case, users can execute custom Ansible scripts on clients.
 ====
+
